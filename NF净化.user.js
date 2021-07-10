@@ -14,9 +14,17 @@
     'use strict';
 
     var tag = document.createElement('style');
-    var light = '.hidden-xs{display:none !important;} .hidden-sm{display:block !important;} .myui-ra-container{display:none;} .hy-layout{display:none;} .dplayer-logo{display:none;} #aaaDiv{display:none !important;} #aaaDiv2{display:none !important;} #sponsorAdDiv{display:none !important;} #sponsorAdDiv2{display:none !important;} .tips.close-box{display:none;} ';
-    var dark = 'body{background:#1a1a1a !important;color:#ccc !important;} .myui-panel-bg, .myui-panel-bg2{background-color: #1a1a1a !important;} .myui-foot{background:#1a1a1a !important;} a, h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{color: #ccc !important;} .top-line:before, .bottom-line:after, .top-line-dot:before, .bottom-line-dot:before{border-color: #eee0 !important;} .myui-header__top{background-color: #1a1a1a !important;} .myui-topbg{background: #1a1a1a;} ';
+    var light = '.hidden-xs{display:none !important;} .hidden-sm{display:block !important;} .myui-ra-container{display:none;} .hy-layout{display:none;} .dplayer-logo{display:none;} #aaaDiv{display:none !important;} #aaaDiv2{display:none !important;} #sponsorAdDiv{display:none !important;} #sponsorAdDiv2{display:none !important;} .tips.close-box{display:none;} #note{display:none !important;} ';
+    var dark = 'body{background:#1a1a1a !important;color:#ccc !important;} .myui-panel-bg, .dropdown-box .item,.myui-panel-bg2{background-color: #1a1a1a !important;} .myui-foot{background:#1a1a1a !important;} a, h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{color: #ccc !important;} .top-line:before, .bottom-line:after, .top-line-dot:before, .bottom-line-dot:before{border-color: #eee0 !important;} .myui-header__top{background-color: #1a1a1a !important;} .myui-topbg{background: #1a1a1a;} .btn-default{background:none !important;box-shadow:none !important;}  ';
 
+    window.onload = function() {
+        const length = document.getElementsByTagName("div").length;
+        const index = length - 3;
+        const ad = document.getElementsByTagName("div")[index];
+        if (ad.style.right === "0px"){
+            ad.style.display = "none";
+        }
+    }
 
     let media = window.matchMedia('(prefers-color-scheme: dark)');
     if (media.matches){
@@ -42,6 +50,7 @@
     } else if (typeof media.addListener === 'function') {
         media.addListener(callback);
     }
+
 
     //<li><a onclick="iina()" href="javascript:void(0)" title="Open In IINA"><i class="fa fa-play-circle"></i></a></li>
     GM_registerMenuCommand ("Open In IINA", iina, "");
