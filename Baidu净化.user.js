@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Baidu净化
 // @icon         http://baidu.com/favicon.ico
-// @namespace    https://github.com/iCrackit/Tampermonkey
+// @namespace    https://github.com/xoxovo/Tampermonkey
 // @version      1.0
 // @description  去除百度搜索结果中的所有广告 自适应DarkMode
 // @author       Edward
